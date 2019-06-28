@@ -1,4 +1,6 @@
-# Vim, gb, and go 1.12 Development environment
+# vim, gb, and go 1.12 development environment
+
+This image includes vim with my preferred plugins and vim-go. It is my usual dev environmewnt.
 
 Build the environment with the included dockerfile. Use vim-go.sh to start it. Anny parameters get passed
 to vim. The working dir is set to /app and the current host dir is mapped to /app.
