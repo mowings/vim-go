@@ -18,6 +18,7 @@ set tabstop=4
 set expandtab
 set shiftwidth=4
 set backspace=2
+" Need to put this stuff in /app directory somewhere. This is kinf of dumb
 set backup                      " Enable creation of backup file.
 set backupdir=~/.vim/backups//  " Where backups will go.
 set directory=~/.vim/tmp//      " Where temporary files will go.
