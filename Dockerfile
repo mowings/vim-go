@@ -8,10 +8,10 @@ ENV GOPATH=/go:/app:/app/vendor
 ENV TERM=xterm-256color
 RUN apt-get -y update && apt-get -y install git vim wget tmux locales 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
-RUN cd /root && wget -q -O - https://gist.githubusercontent.com/mowings/1832c5acea6084e84ed9051edca42c36/raw/d51fda6b46f19fca603680368fe78756a5ae9395/setup.sh | /bin/bash
-RUN cd /root && wget -q https://gist.githubusercontent.com/mowings/1832c5acea6084e84ed9051edca42c36/raw/d51fda6b46f19fca603680368fe78756a5ae9395/.vimrc
-RUN cd /root && wget -q https://gist.githubusercontent.com/mowings/1832c5acea6084e84ed9051edca42c36/raw/d51fda6b46f19fca603680368fe78756a5ae9395/.tmux.conf
-RUN echo >> /root/.vimrc && echo "set t_ut=" >> /root/.vimrc
+COPY vimrc /root/.vimrc
+COPY setup.sh /root
+COPY tmux.conf /root/.tmux.conf
+RUN cd /root && ./setup.sh
 COPY ./vim-go-binaries/* /go/bin/
 RUN apt-get install  -y curl sudo apt-transport-https \
     ca-certificates \
@@ -25,5 +25,6 @@ RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
    stable" && \
    apt-get update && \
    apt-get install -y docker-ce-cli
+RUN mkdir -p /root/.vim/backups && mkdir -p /root/.vim/tmp
 WORKDIR /app
 ENTRYPOINT ["vim"]
