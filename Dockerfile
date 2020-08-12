@@ -27,4 +27,5 @@ RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
    apt-get install -y docker-ce-cli
 RUN mkdir -p /root/.vim/backups && mkdir -p /root/.vim/tmp
 WORKDIR /app
+RUN apt-get install -y nodejs npm && npm install -g coffee-script
 ENTRYPOINT ["vim"]
