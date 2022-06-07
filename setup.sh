@@ -13,6 +13,7 @@ git clone https://github.com/fatih/vim-go.git
 git clone https://github.com/jeetsukumaran/vim-buffergator.git
 git clone https://github.com/scrooloose/nerdcommenter.git
 git clone https://github.com/cespare/vim-toml.git toml
+git clone https://github.com/hashivim/vim-terraform.git
 
 # Set up big theme package
 cd ..

@@ -14,9 +14,9 @@ let g:syntastic_go_checkers = ['go']
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 set encoding=utf-8
-set tabstop=4
+set tabstop=2
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
 set backspace=2
 " Need to put this stuff in /app directory somewhere. This is kinf of dumb
 set backup                      " Enable creation of backup file.
