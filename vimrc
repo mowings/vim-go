@@ -35,4 +35,6 @@ autocmd CursorMoved,CursorMovedI * checktime
 " automatically reload files that haven't been modified
 set autoread
 let NERDTreeShowHidden=1
+let g:terraform_fmt_on_save=1
+let g:terraform_align=1
 set t_ut=
