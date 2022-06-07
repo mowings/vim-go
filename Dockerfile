@@ -28,4 +28,7 @@ RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 RUN mkdir -p /root/.vim/backups && mkdir -p /root/.vim/tmp
 WORKDIR /app
 RUN apt-get install -y nodejs npm && npm install -g coffee-script
+RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+RUN sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+RUN apt-get update && sudo apt-get install -y terraform
 ENTRYPOINT ["vim"]
