@@ -1,4 +1,4 @@
-FROM golang:1.12
+FROM golang:1.15
 LABEL description="golang, gb ad a vim working environment"
 MAINTAINER mowings@turbosquid.com
 RUN go get github.com/constabulary/gb/...
